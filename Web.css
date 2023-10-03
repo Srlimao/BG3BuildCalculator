@@ -1,0 +1,21 @@
+html,body{
+    margin: 0;
+    height: 100%;
+}
+body{
+    background-image: url(Assets/bg3bg.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-form{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: aliceblue;
+}
+.main-form .table tbody tr td{
+    color: white;
+}
+
+.main-form .table tbody tr td i{
+    color: darkgoldenrod;
+}
