@@ -1,28 +1,45 @@
 class AbilityScores {
     constructor() {
         this.scores = {
-            strength: 10,/*
+            strength: 10,
             dexterity: 10,
             constitution: 10,
             intelligence: 10,
             wisdom: 10,
-            charisma: 10,*/
+            charisma: 10,
+        };
+        this.maxPoints = () => { return 27};
+        this.pointsUsed = () => {
+            let sum = 0;
+            for (const key in this.scores) {
+                if (this.scores.hasOwnProperty(key)) {
+                    let currAttribute = this.scores[key];
+                    currAttribute -= 8;// set 8 as 0
+                    if(currAttribute > 5){
+                        currAttribute = (currAttribute - 5) * 2 + 5;
+                    }
+                    sum += currAttribute;
+                }
+            }
+            return sum;
         };
         this.modifiers = {};
         this.primaryAbility = null;
         this.secondaryAbility = null;
         this.tableDOM = document.getElementsByClassName('ability-score-table')[0];
+
+        this.updateAllAbilities();
     }
 
     decreaseScore(ability) {
-        if (this.scores[ability] > 8) {
+        if (this.scores[ability] > 8 ) {
             this.scores[ability] -= 1;
             this.updateHTML(ability);
         }
     }
 
     increaseScore(ability) {
-        if (this.scores[ability] < 15) {
+        if (this.scores[ability] < 15 && this.hasAvailablePoints(ability)) {
             this.scores[ability] += 1;
             this.updateHTML(ability);
         }
@@ -58,6 +75,15 @@ class AbilityScores {
         return this.primaryAbility === ability ? 2 : this.secondaryAbility === ability ? 1 : 0;
     }
 
+    hasAvailablePoints(ability){
+        const nextPointCost = (this.scores[ability] - 8) > 5 ? 2 : 1;
+        if(this.pointsUsed() + nextPointCost > this.maxPoints())
+            return false;
+        else
+            return  true;
+
+    }
+
     updateAllAbilities() {
         for (const ability in this.scores) {
             this.updateHTML(ability);
@@ -70,9 +96,12 @@ class AbilityScores {
         const score = this.scores[ability] + this.getAttributeModifier(ability);
         const primaryCheckbox = this.tableDOM.querySelector(`input[type="checkbox"][data-ability="${ability}"][data-type="primary"]`);
         const secondaryCheckbox = this.tableDOM.querySelector(`input[type="checkbox"][data-ability="${ability}"][data-type="secondary"]`);
-        primaryCheckbox.checked = this.primaryAbility;
-        secondaryCheckbox.checked = this.secondaryAbility;
+        primaryCheckbox.checked = this.primaryAbility == ability;
+        secondaryCheckbox.checked = this.secondaryAbility == ability;
         const modifier = Math.floor((score - 10) / 2);
+
+        const pointsUsedElement = document.querySelector("#points-used span");
+        pointsUsedElement.textContent = `${this.pointsUsed()}/${this.maxPoints()}`;
         
         scoreElement.textContent = score;
         modifierElement.textContent = modifier > 0 ? `+${modifier}` : modifier;

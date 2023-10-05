@@ -22,6 +22,7 @@
               <option>Criminal</option>
               <option>Entertainer</option>
             </select>
+            <div id="points-used">Points used: <span>12/27</span></div>
             <table class="table ability-score-table">
                 <thead>
                     <tr>
@@ -33,8 +34,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!--strength-->
                     <tr class="strength-ability-row">
-                        <td scope="row"><i class="ra ra-muscle-up ra-fw"></i> Strength</td>
+                        <td scope="row" class="ability-name"><i class="ra ra-muscle-up ra-fw"></i> Strength</td>
                         <td>
                             <div class="ability-score">
                                 <button type="button" data-ability="strength" data-action="decrease" class="">-</button>
@@ -46,6 +48,82 @@
                         <td><input type="checkbox" data-ability="strength" data-type="primary"></td>
                         <td><input type="checkbox" data-ability="strength" data-type="secondary"></td>
                     </tr>
+                    <!--dexterity-->
+                    <tr class="dexterity-ability-row">
+                      <td scope="row" class="ability-name"><i class="ra ra-archer ra-fw"></i> Dexterity</td>
+                      <td>
+                          <div class="ability-score">
+                              <button type="button" data-ability="dexterity" data-action="decrease" class="">-</button>
+                              <span class="attribute-value" id="dexterity-score">10</span>
+                              <button type="button" data-ability="dexterity" data-action="increase" class="">+</button>
+                          </div>
+                      </td>
+                      <td><span id="dexterity-modifier">0</span></td>
+                      <td><input type="checkbox" data-ability="dexterity" data-type="primary"></td>
+                      <td><input type="checkbox" data-ability="dexterity" data-type="secondary"></td>
+                    </tr>
+
+                    <!--constitution-->
+                    <tr class="constitution-ability-row">
+                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Constitution</td>
+                      <td>
+                          <div class="ability-score">
+                              <button type="button" data-ability="constitution" data-action="decrease" class="">-</button>
+                              <span class="attribute-value" id="constitution-score">10</span>
+                              <button type="button" data-ability="constitution" data-action="increase" class="">+</button>
+                          </div>
+                      </td>
+                      <td><span id="constitution-modifier">0</span></td>
+                      <td><input type="checkbox" data-ability="constitution" data-type="primary"></td>
+                      <td><input type="checkbox" data-ability="constitution" data-type="secondary"></td>
+                    </tr>
+
+                    <!--intelligence-->
+                    <tr class="intelligence-ability-row">
+                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Intelligence</td>
+                      <td>
+                          <div class="ability-score">
+                              <button type="button" data-ability="intelligence" data-action="decrease" class="">-</button>
+                              <span class="attribute-value" id="intelligence-score">10</span>
+                              <button type="button" data-ability="intelligence" data-action="increase" class="">+</button>
+                          </div>
+                      </td>
+                      <td><span id="intelligence-modifier">0</span></td>
+                      <td><input type="checkbox" data-ability="intelligence" data-type="primary"></td>
+                      <td><input type="checkbox" data-ability="intelligence" data-type="secondary"></td>
+                    </tr>
+
+                    <!--wisdom-->
+                    <tr class="wisdom-ability-row">
+                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Wisdom</td>
+                      <td>
+                          <div class="ability-score">
+                              <button type="button" data-ability="wisdom" data-action="decrease" class="">-</button>
+                              <span class="attribute-value" id="wisdom-score">10</span>
+                              <button type="button" data-ability="wisdom" data-action="increase" class="">+</button>
+                          </div>
+                      </td>
+                      <td><span id="wisdom-modifier">0</span></td>
+                      <td><input type="checkbox" data-ability="wisdom" data-type="primary"></td>
+                      <td><input type="checkbox" data-ability="wisdom" data-type="secondary"></td>
+                    </tr>
+
+                    <!--charisma-->
+                    <tr class="charisma-ability-row">
+                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Charisma</td>
+                      <td>
+                          <div class="ability-score">
+                              <button type="button" data-ability="charisma" data-action="decrease" class="">-</button>
+                              <span class="attribute-value" id="charisma-score">10</span>
+                              <button type="button" data-ability="charisma" data-action="increase" class="">+</button>
+                          </div>
+                      </td>
+                      <td><span id="charisma-modifier">0</span></td>
+                      <td><input type="checkbox" data-ability="charisma" data-type="primary"></td>
+                      <td><input type="checkbox" data-ability="charisma" data-type="secondary"></td>
+                    </tr>
+
+
                 </tbody>
             </table>
           </div> 

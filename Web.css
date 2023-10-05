@@ -32,3 +32,11 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+
+.main-form .table tbody tr td{
+    text-align: center;
+}
+
+.main-form .table tbody tr td.ability-name{
+    text-align: left;
+}
