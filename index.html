@@ -22,17 +22,29 @@
               <option>Criminal</option>
               <option>Entertainer</option>
             </select>
-            <table class="table">
-                <tbody>
+            <table class="table ability-score-table">
+                <thead>
                     <tr>
-                        <td scope="row"><i class="ra ra-muscle-up ra-fw"></i>Strength</td>
-                        <td>a</td>
-                        <td>a</td>
+                        <th>Ability</th>
+                        <th class="text-md-center">Score</th>
+                        <th class="text-md-center">Modifier</th>
+                        <th class="text-md-center">Primary</th>
+                        <th class="text-md-center">Secondary</th>
                     </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
+                </thead>
+                <tbody>
+                    <tr class="strength-ability-row">
+                        <td scope="row"><i class="ra ra-muscle-up ra-fw"></i> Strength</td>
+                        <td>
+                            <div class="ability-score">
+                                <button type="button" data-ability="strength" data-action="decrease" class="">-</button>
+                                <span class="attribute-value" id="strength-score">10</span>
+                                <button type="button" data-ability="strength" data-action="increase" class="">+</button>
+                            </div>
+                        </td>
+                        <td><span id="strength-modifier">0</span></td>
+                        <td><input type="checkbox" data-ability="strength" data-type="primary"></td>
+                        <td><input type="checkbox" data-ability="strength" data-type="secondary"></td>
                     </tr>
                 </tbody>
             </table>
@@ -44,5 +56,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="calculator.js"></script>
   </body>
 </html>

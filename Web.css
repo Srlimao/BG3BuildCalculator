@@ -12,10 +12,23 @@ body{
     background-color: rgba(0, 0, 0, 0.7);
     color: aliceblue;
 }
-.main-form .table tbody tr td{
+.main-form .table tbody tr td,
+.main-form .table thead tr th
+{
     color: white;
 }
 
-.main-form .table tbody tr td i{
+.main-form .table tbody tr td i,
+.main-form .table tbody tr td a,
+.main-form .table tbody tr td .attribute-value,
+.main-form .table tbody tr td.attribute-modifier
+{
     color: darkgoldenrod;
+    font-weight: bold;
+}
+
+.ability-score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

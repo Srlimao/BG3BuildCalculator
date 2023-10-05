@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ability Scores</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ability Scores</h1>
+    <table>
+        <tr>
+            <th>Ability</th>
+            <th>Score</th>
+            <th>Modifier</th>
+        </tr>
+        <tr>
+            <td>Strength</td>
+            <td>
+                <button onclick="decreaseScore('strength')">-</button>
+                <span id="strength-score">10</span>
+                <button onclick="increaseScore('strength')">+</button>
+            </td>
+            <td><span id="strength-modifier">0</span></td>
+        </tr>
+        <tr>
+            <td>Dexterity</td>
+            <td>
+                <button onclick="decreaseScore('dexterity')">-</button>
+                <span id="dexterity-score">10</span>
+                <button onclick="increaseScore('dexterity')">+</button>
+            </td>
+            <td><span id="dexterity-modifier">0</span></td>
+        </tr>
+        <tr>
+            <td>Constitution</td>
+            <td>
+                <button onclick="decreaseScore('constitution')">-</button>
+                <span id="constitution-score">10</span>
+                <button onclick="increaseScore('constitution')">+</button>
+            </td>
+            <td><span id="constitution-modifier">0</span></td>
+        </tr>
+        <tr>
+            <td>Intelligence</td>
+            <td>
+                <button onclick="decreaseScore('intelligence')">-</button>
+                <span id="intelligence-score">10</span>
+                <button onclick="increaseScore('intelligence')">+</button>
+            </td>
+            <td><span id="intelligence-modifier">0</span></td>
+        </tr>
+        <tr>
+            <td>Wisdom</td>
+            <td>
+                <button onclick="decreaseScore('wisdom')">-</button>
+                <span id="wisdom-score">10</span>
+                <button onclick="increaseScore('wisdom')">+</button>
+            </td>
+            <td><span id="wisdom-modifier">0</span></td>
+        </tr>
+        <tr>
+            <td>Charisma</td>
+            <td>
+                <button onclick="decreaseScore('charisma')">-</button>
+                <span id="charisma-score">10</span>
+                <button onclick="increaseScore('charisma')">+</button>
+            </td>
+            <td><span id="charisma-modifier">0</span></td>
+        </tr>
+    </table>
+
+    <script>
+        function decreaseScore(ability) {
+            const scoreElement = document.getElementById(ability + "-score");
+            const modifierElement = document.getElementById(ability + "-modifier");
+            let score = parseInt(scoreElement.textContent);
+            if (score > 8) {
+                score -= 1;
+                scoreElement.textContent = score;
+                updateModifier(score, modifierElement);
+            }
+        }
+
+        function increaseScore(ability) {
+            const scoreElement = document.getElementById(ability + "-score");
+            const modifierElement = document.getElementById(ability + "-modifier");
+            let score = parseInt(scoreElement.textContent);
+            if (score < 15) {
+                score += 1;
+                scoreElement.textContent = score;
+                updateModifier(score, modifierElement);
+            }
+        }
+
+        function updateModifier(score, modifierElement) {
+            const modifier = Math.floor((score - 10) / 2);
+            modifierElement.textContent = modifier > 0 ? "+" + modifier : modifier;
+        }
+    </script>
+</body>
+</html
