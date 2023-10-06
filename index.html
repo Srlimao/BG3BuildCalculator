@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="Web.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <title>Baldur's Gate 3 - Build Calculator</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,8 +16,10 @@
     <link rel="stylesheet" href="rpg-awesome.css">
   </head>
   <body>
-    <div class="w-75 p-3 mx-auto">
-        <div class="main-form form-group w-50 p-3" id="main-form">
+    <div class="container p-3">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="main-form form-group p-3" id="main-form">
             <label for="background-char">Background</label>
             <select class="form-control" name="background-char" id="background-char">
               <option>Acolyte</option>
@@ -39,9 +44,13 @@
                         <td scope="row" class="ability-name"><i class="ra ra-muscle-up ra-fw"></i> Strength</td>
                         <td>
                             <div class="ability-score">
-                                <button type="button" data-ability="strength" data-action="decrease" class="">-</button>
+                                <button type="button" data-ability="strength" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                                 <span class="attribute-value" id="strength-score">10</span>
-                                <button type="button" data-ability="strength" data-action="increase" class="">+</button>
+                                <button type="button" data-ability="strength" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                             </div>
                         </td>
                         <td><span id="strength-modifier">0</span></td>
@@ -53,9 +62,13 @@
                       <td scope="row" class="ability-name"><i class="ra ra-archer ra-fw"></i> Dexterity</td>
                       <td>
                           <div class="ability-score">
-                              <button type="button" data-ability="dexterity" data-action="decrease" class="">-</button>
+                              <button type="button" data-ability="dexterity" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                               <span class="attribute-value" id="dexterity-score">10</span>
-                              <button type="button" data-ability="dexterity" data-action="increase" class="">+</button>
+                              <button type="button" data-ability="dexterity" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                           </div>
                       </td>
                       <td><span id="dexterity-modifier">0</span></td>
@@ -68,9 +81,13 @@
                       <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Constitution</td>
                       <td>
                           <div class="ability-score">
-                              <button type="button" data-ability="constitution" data-action="decrease" class="">-</button>
+                              <button type="button" data-ability="constitution" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                               <span class="attribute-value" id="constitution-score">10</span>
-                              <button type="button" data-ability="constitution" data-action="increase" class="">+</button>
+                              <button type="button" data-ability="constitution" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                           </div>
                       </td>
                       <td><span id="constitution-modifier">0</span></td>
@@ -80,12 +97,16 @@
 
                     <!--intelligence-->
                     <tr class="intelligence-ability-row">
-                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Intelligence</td>
+                      <td scope="row" class="ability-name"><i class="ra ra-scroll-unfurled ra-fw"></i> Intelligence</td>
                       <td>
                           <div class="ability-score">
-                              <button type="button" data-ability="intelligence" data-action="decrease" class="">-</button>
+                              <button type="button" data-ability="intelligence" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                               <span class="attribute-value" id="intelligence-score">10</span>
-                              <button type="button" data-ability="intelligence" data-action="increase" class="">+</button>
+                              <button type="button" data-ability="intelligence" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                           </div>
                       </td>
                       <td><span id="intelligence-modifier">0</span></td>
@@ -95,12 +116,16 @@
 
                     <!--wisdom-->
                     <tr class="wisdom-ability-row">
-                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Wisdom</td>
+                      <td scope="row" class="ability-name"><i class="ra ra-crystal-ball ra-fw"></i> Wisdom</td>
                       <td>
                           <div class="ability-score">
-                              <button type="button" data-ability="wisdom" data-action="decrease" class="">-</button>
+                              <button type="button" data-ability="wisdom" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                               <span class="attribute-value" id="wisdom-score">10</span>
-                              <button type="button" data-ability="wisdom" data-action="increase" class="">+</button>
+                              <button type="button" data-ability="wisdom" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                           </div>
                       </td>
                       <td><span id="wisdom-modifier">0</span></td>
@@ -110,12 +135,16 @@
 
                     <!--charisma-->
                     <tr class="charisma-ability-row">
-                      <td scope="row" class="ability-name"><i class="ra ra-hearts ra-fw"></i> Charisma</td>
+                      <td scope="row" class="ability-name"><i class="fa fa-handshake-o"></i> Charisma</td>
                       <td>
                           <div class="ability-score">
-                              <button type="button" data-ability="charisma" data-action="decrease" class="">-</button>
+                              <button type="button" data-ability="charisma" data-action="decrease" class="svg-button">
+                                  <img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">-</span>
+                                </button>
                               <span class="attribute-value" id="charisma-score">10</span>
-                              <button type="button" data-ability="charisma" data-action="increase" class="">+</button>
+                              <button type="button" data-ability="charisma" data-action="increase" class="svg-button"><img src="buttonPlus.svg" alt="SVG button">
+                                  <span class="button-text">+</span></button>
                           </div>
                       </td>
                       <td><span id="charisma-modifier">0</span></td>
@@ -126,7 +155,33 @@
 
                 </tbody>
             </table>
-          </div> 
+        </div>
+        </div>
+        <div class="col-sm">
+          
+          <div class="calc-form form-group p-3" id="calc-form">
+            <div class="row">
+              <div class="col-sm-6">
+                <div>Level</div>
+              </div>
+              <div class="col-sm-6">
+                <button type="button" data-ability="level" data-action="decrease" class="svg-button">
+                  <img src="buttonPlus.svg" alt="SVG button">
+                  <span class="button-text">-</span>
+                </button>
+                <span class="attribute-value" id="level-score">0</span>
+                <button type="button" data-ability="level" data-action="increase" class="svg-button">
+                  <img src="buttonPlus.svg" alt="SVG button">
+                  <span class="button-text">+</span>
+                </button>
+              </div>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
       
     <!-- Optional JavaScript -->
@@ -134,6 +189,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="AbilityScores.js"></script>
     <script src="calculator.js"></script>
   </body>
 </html>

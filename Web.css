@@ -7,8 +7,10 @@ body{
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Merriweather', serif !important;
 }
-.main-form{
+.main-form,
+.calc-form{
     background-color: rgba(0, 0, 0, 0.7);
     color: aliceblue;
 }
@@ -40,3 +42,53 @@ body{
 .main-form .table tbody tr td.ability-name{
     text-align: left;
 }
+
+.button {
+    width: 32px;
+    height: 32px;
+    background-color: #2f2523; /* Lighter gold background color */
+    border: 2px solid #aa8e70; /* Light gold border color */
+    border-radius: 50%; /* Makes the button round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #808080; /* Light gray symbol color */
+    font-size: 18px; /* Adjust the font size as needed */
+    text-decoration: none;
+    line-height: 1;
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background-color: #e5c100; /* Slightly darker gold background on hover */
+  }
+
+  .svg-button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    width: 28px;
+    height: 28px;
+    background-image: url('buttonPlus.svg'); /* Reference the SVG file */
+    background-size: cover; /* Adjust as needed */
+    font-weight: bold;
+  }
+  
+  
+  .svg-button:hover {
+    fill: #cdac88; /* Change fill color on hover */
+  }
+  
+  .button-text {
+    position: relative;
+    top: -105%;
+    color: #808080; /* Text color */
+    font-size: 18px; /* Text font size */
+    font-weight: bold; /* Text font weight */
+  }
+
+  .svg-button:focus {
+    outline: none; /* Remove the focus outline */
+  }
